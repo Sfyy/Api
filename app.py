@@ -20,7 +20,7 @@ def preprocess_image(image):
     image = image.reshape(1, 150, 150, 3)
     return image
 
-@app.route("/")
+@app.route('/predict', methods=['POST'])
 def predict():
     # Get the image from the request
     image_file = request.files['image']
@@ -42,3 +42,5 @@ def predict():
 
     return jsonify(result)
 
+if __name__ == '__main__':
+   app.run(port=5000, debug=True)
