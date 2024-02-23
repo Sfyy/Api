@@ -1,3 +1,0 @@
-runtime: python
-env: flex
-entrypoint: waitress-serve --port=$PORT main:app
